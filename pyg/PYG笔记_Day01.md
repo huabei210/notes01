@@ -419,7 +419,12 @@ idea 配置本地约束
 注意测试时要加.do 结尾,
 ```
 
+![1557997013196](assets/1557997013196.png)
+
+
+
 ### 1.3.17 .管理中心
+
 **视频信息**
 
 ```
@@ -466,6 +471,16 @@ pinyougou-xxxxx-web     某 web 工程
 视频时长: 26:10
 ```
 **小节内容**
+
+```
+classpath: 加载claspath下所有的配置文件,如果有同名文件,只加载第一个
+classpath*: 加载claspath下所有的配置文件,并且加载jar包中的配置文件,如果有同名文件,都加载
+```
+
+
+
+
+
 ```
 1)pinyougou-parent (pom)父工程,用于整合
 2)pinyougou-pojo (jar)实体类  (修改每个实体类，让其实现 Serializable 接口 )
