@@ -1,0 +1,125 @@
+1) 查看ip 地址
+  ifconfig
+2) 查看文件信息
+	ls  列出当前文件夹下文件名称
+	ls -l  列出当前文件夹下文件名称和详细信息
+	ll     列出当前文件夹下文件名称和详细信息( ls -l 的简写) 注意此命令属于扩展命令, 有些linux版本不支持
+3) 切换目录   cd: change directory
+	cd ~  : 切换至当前用户的跟目录
+	cd /  : 切换至跟目录
+	cd ..  : 切换至上一级 (注意空格)
+	cd app	切换到app
+4) 查看当前所在的目录
+	pwd 
+5) 创建mkdir(make directory)命令可用来创建子目录。
+	mkdir app  当前目录下创建 app 目录
+	mkdir -p a/b/c 级联创建目录
+6) 删除
+	rm a.txt    删除a.txt文件  (需要确认,输入yes 或y)
+	rm -f a.txt    不询问，直接删除 a.txt
+	rm -r app    删除app目录(需要确认,输入yes 或y,递归)
+	rmdir app 删除app目录(必须为空否则无法删除)
+	rm -rf  a    不询问递归删除a 及其子目录下的东西
+	rm -rf  *     删除当前文件夹及其自目录
+	rm -rf  /       格式化磁盘 (一些大型的公司为了避免程序员错误输入该命令,回将该命令重新,放置错误删除)
+7) 查看文件内容
+	cat :  查看文件，会将文件内容在屏幕上全部罗列
+	cat -n a.txt    会将文件内容在屏幕上全部罗列(显示行号)
+	more: 查看文件   分页查看，只能向下翻，不能向上翻
+	more +100 a.txt 从a.txt 的第100行开始查看
+	less: 查看文件  分页查看，能向上也能向下 (上下箭头翻看)
+	tail -10 /etc/passwd  :  查看后10行数据
+	tail -f catalina.log  :  动态实时监控日志()   ctrl+c 结束查看
+8) 复制/剪切(移动)
+	cp命令可以将文件从一处复制到另一处。
+		cp a.txt b.txt    将a.txt复制为b.txt文件
+		cp a.txt ../  将a.txt文件复制到上一层目录中
+
+	mv 移动或者重命名
+		mv a.txt ../    将a.txt文件移动到上一层目录中
+		mv a.txt b.txt    将a.txt文件重命名为b.txt
+9) 打包压缩
+	打包： 
+	tar –cvf xxx.tar ./*
+	打包并且压缩：
+	tar –zcvf xxx.tar.gz ./* 
+
+10  解压 
+     tar –xvf xxx.tar
+	 tar -zxvf xxx.tar.gz -C /usr/aaa   -C 选项的作用是：指定需要解压到的目录。
+11) 查找目录
+	find 目录 命令 内容
+	find /  -name “ins*” 从根目录查找文件名称是以ins开头的文件
+	find /root -name “ins*” 从/root 目录查找文件名称是以ins开头的文件
+	find / -name “ins*” –ls 
+	find / –user itcast –ls 查找用户itcast的文件
+	find / –user itcast –type d –ls 查找用户itcast的目录
+	find /-perm -777 –type d –ls 查找权限是777的文件
+	
+	
+	
+12) 查找内容
+	grep lang anaconda-ks.cfg  在文件中查找lang
+	grep lang anaconda-ks.cfg –color 高亮显示
+	grep lang anaconda-ks.cfg –color -A1 -B1 高亮显示 ,并向前一行和向后一行
+	grep -rn  lang anaconda-ks.cfg  在文件中查找lang 并显示行号
+
+13 其他常用命令    
+	查看历史命令
+		history
+	查看当前用户
+		whoami
+	显示当前所在目录【pwd】
+	创建一个空文件【touch】 touch a.txt
+	清屏【clear/ crtl + L】
+
+14) vim 编辑器
+ vi.vim:
+      
+      进入后默认是命令行模式，
+	  
+	  按I,a可以进入可编辑模式，
+	  按esc转换为命令行模式。
+	  令行模式下按[ : ]进行底行模式，
+	  可以输入wq保存并退出，
+	  q 退出  
+	  q!表示强制退出.
+15) 修改权限
+	chmod 755 a.txt 
+	chmod u=rwx,g=rx,o=rx a.txt
+16) 输出到文件
+	cat /etc/passwd > a.txt  将输出定向到a.txt中
+	cat /etc/passwd >> a.txt  输出并且追加
+	
+管道  |
+grep -rn a in.txt | more +115
+	
+17) 修改权限	
+	chmod 755 a.txt 
+	chmod u=rwx,g=rx,o=rx a.txt
+
+-----------------------------------
+19 系统命令/网络服务
+
+	ps –ef  查看所有进程
+	ps –ef | grep ssh 查找某一进程
+	kill 2868  杀掉2868编号的进程
+	kill -9 2868  强制杀死进程
+	-----------------------------
+	service network status 查看指定服务的状态
+	service network stop 停止指定服务
+	service network start 启动指定服务
+	service network restart 重启指定服务
+
+	service --status–all 查看系统中所有后台服务
+	netstat –nltp 查看系统中网络进程的端口监听情况
+	---------------------------------
+	防火墙设置
+	防火墙根据配置文件/etc/sysconfig/iptables来控制本机的”出”、”入”网络访问行为。
+	service iptables status 查看防火墙状态
+	service iptables stop 关闭防火墙
+	service iptables start 启动防火墙
+	chkconfig  iptables off 禁止防火墙自启
+
+
+
