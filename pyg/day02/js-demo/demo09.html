@@ -1,0 +1,38 @@
+<html> 
+<head> 
+ <title>入门小 Demo-4</title> 
+ <script src="angular.min.js"></script> 
+ 
+</head> 
+<body ng-app="myApp" ng-controller="myController" > 
+<table> 
+	<tr> 
+		 <td>姓名</td> 
+		 <td>数学</td> 
+		 <td>语文</td> 
+	</tr> 
+	<tr ng-repeat="entity in en.list" > 
+		 <td>{{entity.name}}</td> 
+		 <td>{{entity.shuxue}}</td> 
+		 <td>{{entity.yuwen}}</td> 
+	</tr> 
+	<button ng-click='add()'></button >
+	<input ng-model="en.list"  "/>
+	{{en.list}}
+</table> 
+<script> 
+  var app=angular.module('myApp',[]); //定义了一个叫 myApp 的模块 
+  //定义控制器 
+  app.controller('myController',function($scope){ 
+		
+		
+		$scope.add=function(){
+			$scope.en.list.length
+			}
+		}); 
+		
+		
+
+ </script>  
+</body> 
+</html> 
