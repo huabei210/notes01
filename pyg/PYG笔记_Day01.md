@@ -473,9 +473,19 @@ pinyougou-xxxxx-web     某 web 工程
 ```
 **小节内容**
 
-```
-classpath: 加载claspath下所有的配置文件,如果有同名文件,只加载第一个
-classpath*: 加载claspath下所有的配置文件,并且加载jar包中的配置文件,如果有同名文件,都加载
+```xml
+classpath:  和classpath:* 的区别
+1) 在web.xml 中
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath*:spring/applicationContext*.xml</param-value>
+	</context-param>
+	classpath: 加载claspath下所有的配置文件,如果有同名文件,只加载第一个
+	classpath*: 加载claspath下所有的配置文件,并且加载jar包中的配置文件,如果有同名文件,都加载
+2) 在spring配置文件中引入外部资源文件
+	<context:property-placeholder location="classpath*:properties/*.properties" />
+	classpath: 加载claspath下所有的配置文件,并且加载jar包中的配置文件,如果有同名文件,只加载第一个
+	classpath*: 加载claspath下所有的配置文件,并且加载jar包中的配置文件,如果有同名文件,都加载
 ```
 
 
@@ -552,3 +562,6 @@ dao
 补充: 如果确认配置没有问题 则依旧包timeout 错误,可能是电脑性能较低,配置客户端和服务端都配置timeout 即可
 ```
 
+maven 插件 安装
+
+![1558099935664](assets/1558099935664.png)
