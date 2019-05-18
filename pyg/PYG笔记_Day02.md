@@ -786,8 +786,27 @@ $scope.search=function(page,size){
 }
 ```
 ```
-$scope
-$http
-$evnet.target
+$scope={
+	findAll=function(){..}
+	paginationConf = {
+                currentPage: 1,
+                totalItems: 10,
+                itemsPerPage: 10,
+                perPageOptions: [10, 20, 30, 40, 50],
+                onChange: function(){
+                    $scope.reloadList();
+                }
+	reloadList=function(){..}
+	
+	$scope.findPage=function(page,size){}
+	list=[{id:1,name:lianxiang,firstChar:L}]
+
+	entity=
+	{
+		name:VIVO,
+		firstChar:V
+		id:10
+	}
+}
 ```
 
