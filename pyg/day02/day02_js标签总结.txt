@@ -17,7 +17,8 @@ http://www.runoob.com/angularjs/angularjs-tutorial.html
 	 ng-init="add()" 初始化执行
 	 ng-controller : 指定控制器
 	 ng-click: 单击事件
-	 ng-repeat: 循环
+	 ng-repeat: 循环  entity in list
+	 
 	 ng-if
 	 ng-options
 	 ng-true-value/ng-false-value=
@@ -25,6 +26,7 @@ http://www.runoob.com/angularjs/angularjs-tutorial.html
 内置服务
 	$scope
 	$http
+	
 	$controller 
 	$location
 内置API----
