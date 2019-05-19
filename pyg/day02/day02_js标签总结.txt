@@ -12,10 +12,10 @@ http://www.runoob.com/angularjs/angularjs-tutorial.html
 表达式:
 	{{100+100}} 
 指令:
-	 ng-app: 声明一个应用
+	 ng-app="pinyougou": 声明一个应用 // var app=angular.module('pinyougou',['pagination']);
 	 ng-model: 绑定一个变量
 	 ng-init="add()" 初始化执行
-	 ng-controller : 指定控制器
+	 ng-controller : 指定控制器// app.controller('brandController',function($scope,$http){
 	 ng-click: 单击事件
 	 ng-repeat: 循环  entity in list
 	 
@@ -30,7 +30,7 @@ http://www.runoob.com/angularjs/angularjs-tutorial.html
 	$controller 
 	$location
 内置API----
-$event
+$event  : 源  //.target.checked
 $index
 =========
 任何对象在使用前保证"点"之前对象被初始化过

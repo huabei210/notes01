@@ -1,7 +1,7 @@
 # PYG笔记_Day03
 ## 1.1 本节知识点
 ```
-1)angularJS的service、
+1)angularJS的service、即前端分层开发
 2)angularJS继承
 3)select2下拉列表框组件
 ```
@@ -66,6 +66,14 @@ app.controller('brandController' ,function($scope,brandService){
 	}  
 }
 ```
+
+```
+分层的优势:
+	代码更加规范,便于管理
+	提高代码的可重用性
+```
+
+
 
 ### 1.3.3 .代码分离JS
 
