@@ -76,7 +76,7 @@ pattern="/**" :
 
 ![](img/Snipaste_2019-01-19_21-43-35.png)
 
-
+![1558407362005](assets/1558407362005.png)
 
 注意: 此处的action要和配置文件中的一致
 
@@ -137,15 +137,38 @@ pattern="/**" :
 		loginform.submit() : 这个是dom 源声的东西 格式"form表单Id.方法名" 可以直接调用
 ```
 
+frameset 标签学习网址:
+
+<http://www.w3school.com.cn/tags/tag_frameset.asp>
+
+```
+
+frameset 的布局案例
+index.html
+<frameset rows="25%,75%">
+  <frame src="top.html" scrolling="no">
+  <frameset cols="25%,75%">
+	<frame src="left.html">
+	<frame src="right.html"/>
+  </frameset>
+</frameset>
+
+
+```
+
+
+
+
+
 思考:
 
 ​	那些页面不需要拦截
 
 ![](img/Snipaste_2019-01-19_22-01-17.png)
 
+Spring-security 登陆流程
 
-
-
+![](assets/spring-security流程.png)
 
 ### 1.3.6 .运营商系统-显示登陆名
 
@@ -301,6 +324,7 @@ dubbo:reference: 从注册中心要访问的服务
 ```
 ### 1.3.16 .Bcrypt加密算法简介
 **视频信息**
+
 ```
 视频名称: 16.Bcrypt加密算法简介
 视频时长: 08:03
@@ -309,7 +333,57 @@ dubbo:reference: 从注册中心要访问的服务
 ```
    用户表的密码通常使用MD5等不可逆算法加密后存储，为防止彩虹表破解更会先使用一个特定的字符串（如域名）加密，然后再使用一个随机的salt（盐值）加密。 特定字符串是程序代码中固定的，salt是每个密码单独随机，一般给用户表加一个字段单独存储，比较麻烦。 BCrypt算法将salt随机并混入最终加密后的密码，验证时也无需单独提供之前的salt，从而无需单独处理salt问题。
 ```
+```
+import org.apache.commons.codec.digest.Md5Crypt;
+import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+//对称加密 可以解密
+// 但是MD5 加密不可以用数学算法解密
+public class PassEncoder {
+    public static void main(String[] args) {
+        String salt="*&^^%%";
+        String password="123456";
+        password= password+salt;
+
+        Md5PasswordEncoder Md5 =new  Md5PasswordEncoder();
+        String encodePassword = Md5.encodePassword(password, "");
+
+        //System.out.println(encodePassword);
+
+        // loging
+
+      salt="!@#$%^$#";
+      String password2="123456"+salt;
+
+        String encodePassword3 = Md5.encodePassword(password2, "");
+       // System.out.println(encodePassword3);
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        String encode = encoder.encode("123456");
+        String encode1 = encoder.encode("123456");
+        String encode2 = encoder.encode("123456");
+        System.out.println(encode);
+        System.out.println(encode1);
+        System.out.println(encode2);
+
+
+        System.out.println(encoder.matches("1234567","$2a$10$h8tBrINMSD5vXUQ9jxzpRuP7x/oQ/MRiptFmCyYuwyxqC9LxdElDm"));
+    }
+    //zhangsan ,b79b68b85cb502005a056b9b3781c8a8,!@#$%^$#
+    //lisi ,16d6214189594ded88c9866407cdf26d,*&^^%%
+    //b79b68b85cb502005a056b9b3781c8a8
+    //b79b68b85cb502005a056b9b3781c8a8
+}
+
+
+// 可逆 ssh
+// 不可逆
+
+```
+
+
+
 ### 1.3.17 .商家登陆加密配置
+
 **视频信息**
 
 ```
