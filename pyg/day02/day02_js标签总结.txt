@@ -19,7 +19,7 @@ http://www.runoob.com/angularjs/angularjs-tutorial.html
 	 ng-click: 单击事件
 	 ng-repeat: 循环  entity in list
 	 
-	 ng-if
+	 ng-if  : 是否显示包含的标签内容
 	 ng-options
 	 ng-true-value/ng-false-value=
 	 ng-checked=
