@@ -52,7 +52,7 @@ typora-root-url: img
 ng-options="item.id as item.name for item in itemCat1List">
 	ng-options属性可以在表达式中使用数组或对象来自动生成一个select中的option列表。ng-options与ng-repeat很相似，很多时候可以用ng-repeat来代替ng-options。但是ng-options提供了一些好处，例如减少内存提高速度，以及提供选择框的选项来让用户选择。	
 ```
-![](img/Snipaste_2019-01-22_21-31-57.png)
+![](../img/Snipaste_2019-01-22_21-31-57.png)
 
 ### 1.3.4 .选择商品分类-二级分类与三级分类下拉列表
 **视频信息**
@@ -116,7 +116,7 @@ $scope.$watch('entity.goods.category1Id', function(newValue, oldValue) {
 
 
 
-![](img/day06_0001.png)
+![](../img/day06_0001.png)
 
 ### 1.3.8 .规格选择-显示规格面板-后端代码
 
@@ -184,7 +184,7 @@ $scope.$watch('entity.goods.category1Id', function(newValue, oldValue) {
 ```
 **小节内容**
 
-![](img/day06_00002.png)
+![](../img/day06_00002.png)
 
 ### 1.3.12 .SKU商品列表-思路分析与表结构
 **视频信息**
@@ -198,7 +198,7 @@ $scope.$watch('entity.goods.category1Id', function(newValue, oldValue) {
  var newRow= JSON.parse( JSON.stringify( oldRow )  );//深克隆
  1)基本数据类型无需克隆
  2)深克隆: 所有引用类型都会被克隆
- 3)浅克隆:只有对象的基本属性被clon,引用类型没有被克隆
+ 3)浅克隆:只有对象的基本属性被clone,引用类型没有被克隆
 ```
 JAVA 深克隆
 
@@ -219,7 +219,7 @@ User user = new User();
 
 ```
 
-![克隆,堆栈](/克隆,堆栈.png)
+![1558688652114](/../assets/1558688652114.png)
 
 
 
