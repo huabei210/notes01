@@ -120,6 +120,10 @@ springDataRedis
 ```
 视频名称: 08.网站首页-广告展示-后端
 视频时长: 07:39
+
+排序
+example.setOrderByClause("sort_order asc");
+
 ```
 **小节内容**
 
@@ -142,6 +146,12 @@ springDataRedis
 
 ![](img/1545804890036.png)
 
+Redis 远程连接命令
+
+```
+redis-cli -h 192.168.25.153 -p 6379
+```
+
 ##### Redis 教程
 
 ```
@@ -163,6 +173,9 @@ ZSet: 有序集合
 ##### Redis key 操作
 
 ```
+flushdb
+	清空当前库所有key
+
 SET key value  
 	设置值
 DEL key
@@ -314,7 +327,18 @@ redisTemplate.boundListOps("namelist1").remove(0, "刘备");
 视频名称: 17.广告数据的缓存
 视频时长: 10:01
 ```
-**小节内容**
+```
+Spring配置文件<context:property-placeholder>标签使用注意事项
+
+<context:property-placeholder>标签提供了一种优雅的外在化参数配置的方式，不过该标签在Spring配置文件中只能存在一份！！！
+
+众所周知，Spring容器是采用反射扫描的发现机制，通过标签的命名空间实例化实例，当Spring探测到容器中有一个org.springframework.beans.factory.config.PropertyPlaceholderCVonfigurer的Bean就会停止对剩余PropertyPlaceholderConfigurer的扫描，即只能存在一个实例！
+```
+
+
+
+小节内容**
+
 ### 1.3.18 .广告数据缓存更新
 **视频信息**
 ```
