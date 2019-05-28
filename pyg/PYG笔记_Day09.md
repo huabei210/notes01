@@ -45,6 +45,27 @@ Solr可以和Hadoop一起使用。由于Hadoop处理大量数据，Solr帮助我
 视频名称: 03.solr安装
 视频时长: 10:23
 ```
+```
+1：安装 Tomcat，解压缩即可。
+2：解压 solr。
+3：把 solr 下的dist目录solr-4.10.3.war部署到 Tomcat\webapps下(去掉版本号)。
+4：启动 Tomcat解压缩 war 包
+5：把solr下example/lib/ext 目录下的所有的 jar 包，添加到 solr 的工程中(\WEB-INF\lib目录下)。
+6：创建一个 solrhome 。solr 下的/example/solr 目录就是一个 solrhome。复制此目录到D盘改名为solrhome  
+7：关联 solr 及 solrhome。需要修改 solr 工程的 web.xml 文件。
+    <env-entry>
+       <env-entry-name>solr/home</env-entry-name>
+       <env-entry-value>d:\solrhome</env-entry-value>
+       <env-entry-type>java.lang.String</env-entry-type>
+    </env-entry>
+8：启动 Tomcat
+http://IP:8080/solr/
+```
+
+
+
+
+
 #### solor 查询参数
 
 ```
@@ -58,7 +79,7 @@ wt - (writer type)指定输出格式，可以有 xml, json, php, phps。
 fq - （filter query）过虑查询，作用：在q查询符合结果中同时是fq查询符合的，例如：q=mm&fq=date_time:[20081001 TO 20091031]，找关键字mm，并且date_time是20081001到20091031之间的
 ```
 
-solr  语法
+solr  语法(java 代码可用,但是solr 控制台不可用)
 
 ```
 : 指定字段查指定值，如返回所有值:
@@ -88,6 +109,16 @@ solr  语法
 ```
 **小节内容**
 
+```
+步骤：
+1、把IKAnalyzer2012FF_u1.jar 添加到 solr 工程的 lib 目录下
+2、创建WEB-INF/classes文件夹  把扩展词典、停用词词典、配置文件放到 solr 工程的 WEB-INF/classes 目录下。
+3、修改 Solrhome 的 schema.xml 文件，配置一个 FieldType，使用 IKAnalyzer
+<fieldType name="text_ik" class="solr.TextField">
+     <analyzer class="org.wltea.analyzer.lucene.IKAnalyzer"/>
+</fieldType>
+```
+
 **补充**
 
 ### 1.3.5 .solr域-1
@@ -107,6 +138,15 @@ solr  语法
 视频时长: 03:57
 ```
 **小节内容**
+
+```xml
+<fieldType name="text_ik" class="solr.TextField">
+		<analyzer class="org.wltea.analyzer.lucene.IKAnalyzer"/>
+</fieldType
+```
+
+
+
 ```xml
 <field name="item_goodsid" type="long" indexed="true" stored="true"/>
 <field name="item_title" type="text_ik" indexed="true" stored="true"/>
@@ -146,12 +186,21 @@ solr  语法
 视频时长: 03:58
 ```
 **小节内容**
+
+
+
 ```
 动态域,我们可以动态的指定域的字段名称
 ```
 
+```xml
+ <dynamicField name="item_spec_*" type="string" indexed="true" stored="true" />	
+```
+
+
 
 ### 1.3.9 .SpringDataSolr简介
+
 **视频信息**
 ```
 视频名称: 09.SpringDataSolr简介
@@ -168,13 +217,25 @@ Spring Data Solr :(对solrJ 的封装)
 视频名称: 10.springdataSolr入门-准备
 视频时长: 05:34
 ```
+
+
 ### 1.3.11 .springdataSolr入门-注解
+
 **视频信息**
 ```
 视频名称: 11.springdataSolr入门-注解
 视频时长: 05:45
 ```
+```
+@Field
+private Long id;//在solr 的schema 中配置文件中已经 line:123 已经定义了一个 字段为id  必须传递
+@Field("item_title")
+```
+
+
+
 ### 1.3.12 .springdataSolr入门-增加修改
+
 **视频信息**
 ```
 视频名称: 12.springdataSolr入门-增加修改
@@ -233,11 +294,12 @@ Spring Data Solr :(对solrJ 的封装)
 criteria=criteria.is("item_keywords").contains("黑炭");
 
 criteria=criteria.and("item_keywords").contains("黑炭");
-
+注意:
 and 和 is 的区别
  is: 会将案例中的 黑炭 进行分词,然后会根据分开的词语模糊查询返回
  and 不会分词 直接查询
 
+如果 查询条件中含有空格,则报错
 ```
 
 
