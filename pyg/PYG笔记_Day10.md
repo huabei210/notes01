@@ -50,7 +50,7 @@ HighlightOptions highlightOptions=new HighlightOptions().addField("item_title");
 
 
 
-![](img/Snipaste_2019-01-30_13-52-56.png)
+![](img/Snipaste_2019-01-30_13-52-56.png)      
 
 ### 1.3.3 .高亮显示-前端
 **视频信息**
@@ -59,9 +59,14 @@ HighlightOptions highlightOptions=new HighlightOptions().addField("item_title");
 视频时长: 14:07
 ```
 **小节内容**
+
 ```
 思考>:前端为何不显示样式?
 	angular js 安全机制自动拦截了
+	
+关于 $sce 的一个详细讲解
+https://www.cnblogs.com/lyy-2016/p/7928728.html
+	
 ```
 ![](img/day10_0001.png)
 
@@ -75,7 +80,6 @@ HighlightOptions highlightOptions=new HighlightOptions().addField("item_title");
 **小节内容**
 ```
 业务规则这里我们参考了京东的搜索页的业务逻辑
-
 ```
 ### 1.3.5 .实现思路与代码结构优化
 **视频信息**
