@@ -1,0 +1,14 @@
+阶段小结
+	1)我们学习过那些技术,解决了什么问题
+		01) ssm+dubbox
+			mybatis :  简化了jdbc
+			Spring : 耦合 IOC ,AOP : 不修改源代码的基础上,增强代码
+			Springmvc: 简化了servlet 的开发
+			dubbox: 分布式部署,面向服务编程 SOA
+		02) angularJS
+			解决前端问题: 参数传递.页面效果等
+		03) Spring-secuity: 登陆权限的问题
+		04) FastDfS : 文件存储 ,富文本编辑器
+		05) Redis: 缓存
+		06) solr/lucene : 非结构化数据的存储与查询
+----day11-----------------------------------------------
