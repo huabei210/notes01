@@ -10,6 +10,7 @@
 目标1：理解消息中间件、JMS等概念
 目标2：掌握JMS点对点与发布订阅模式的收发消息
 目标3：掌握SpringJms
+-----------------------------
 目标4：完成商品审核导入索引库
 目标5：完成商品删除移除索引库
 目标6: 完成商品审核生成商品详细页
@@ -78,6 +79,8 @@ JMS本身只定义了一系列的<font color='#FF4500'>**接口规范**</font>�
 · StreamMessage -- Java 原始值的数据流
 
 ```
+springjms 和jms 的关系
+
 ![](img/day13_003.png)
 
 
@@ -90,8 +93,7 @@ JMS本身只定义了一系列的<font color='#FF4500'>**接口规范**</font>�
 
 ```
 点对点 
-	
-发布/ 订阅模式
+发布/订阅模式
 	广播
 ```
 **补充**
@@ -100,6 +102,7 @@ JMS本身只定义了一系列的<font color='#FF4500'>**接口规范**</font>�
 
 ### 1.3.6 .activeMQ安装与使用
 **视频信息**
+
 ```
 视频名称: 06.activeMQ安装与使用
 视频时长: 08:54
@@ -155,8 +158,46 @@ chmod是Linux下设置文件权限的命令，后面的数字表示不同用户�
 视频时长: 11:41
 ```
 **小节内容**
-```
+```java
+	public static void main(String[] args) throws JMSException, IOException {
+		//1.创建连接工厂
+		ConnectionFactory connectionFactory=new ActiveMQConnectionFactory("tcp://192.168.25.153:61616");
+		//2.创建连接
+		Connection connection = connectionFactory.createConnection();
+		//3.启动连接
+		connection.start();
+		//4.获取session(会话对象)  参数1：是否启动事务  参数2：消息确认方式
+		Session session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
+		//5.创建队列对象
+		Queue queue = session.createQueue("test-queue");
+		//6.创建消息消费者对象
+		MessageConsumer consumer = session.createConsumer(queue);
+		//7.设置监听
+		consumer.setMessageListener(new MessageListener() {
+			
+			public void onMessage(Message message) {
 
+				try {
+
+					TextMessage textMessage=(TextMessage)message;
+					System.out.println("提取的消息："+ textMessage.getText() ); //发短信
+
+					//textMessage.acknowledge();
+				} catch (JMSException e) {					
+					e.printStackTrace();
+				}
+				
+			}
+		});
+		//8.等待键盘输入
+		System.in.read();
+		//boolean flag=true;
+		//while (flag){
+		//
+		//}
+		//9.关闭资源
+		consumer.close();
+		session.close();
 ```
 **补充**
 ```
@@ -213,7 +254,7 @@ public static void main(String[] args) throws JMSException, IOException {
 		Topic topic = session.createTopic("test-topic");		
 		//6.创建消息消费者对象
 		//MessageConsumer consumer = session.createConsumer(topic);
-		//注意 持久化订阅模式 要先启动 客户端,让 MQ 知道客户端的存在,之后关闭客户端才能接收到客户端断开连接时间的消息
+		//注意 持久化订阅模式 要先启动客户端,让 MQ 知道客户端的存在,之后关闭客户端才能接收到客户端断开连接时间的消息
 		MessageConsumer consumer = session.createDurableSubscriber(topic,"clientID_001");
 		//7.设置监听
 		consumer.setMessageListener(new MessageListener() {
@@ -342,7 +383,7 @@ spring 头报错 使用如下头
 		<property name="connectionFactory" ref="connectionFactory" />
 		<property name="destination" ref="topicTextDestination" />
 		<property name="messageListener" ref="myMessageListener" />
-		<!-- 持久啊订阅模式 -->
+		<!-- 持久化阅模式 -->
 		<!-- 发布订阅模式 -->
 		<property name="pubSubDomain" value="true" />
 		<!-- 消息持久化值设置为true -->
