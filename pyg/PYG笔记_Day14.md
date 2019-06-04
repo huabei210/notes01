@@ -164,13 +164,13 @@ src/main/resource
 
 1)
 
-![](../../../../000 讲义_git/130 品优购/img/Snipaste_2019-02-18_11-01-23.png)
+![](img/Snipaste_2019-02-18_11-01-23.png)
 
 1) ctrl_shift+A
 
  输入 Registry
 
-![](../../../../000 讲义_git/130 品优购/img/Snipaste_2019-02-18_18-26-47.png)
+![](/img/Snipaste_2019-02-18_18-26-47.png)
 
 小节内容**
 
@@ -270,6 +270,13 @@ https://netease.im/sms
 视频时长: 13:28
 ```
 **小节内容**
+
+```
+static final String accessKeyId = "LTAI4c2iz2BtplTn";
+    static final String accessKeySecret = "6POPVgnmoGU8GqwdfcT1AzmV2JO88c";
+```
+
+
 
 ****
 
