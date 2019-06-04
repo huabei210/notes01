@@ -252,11 +252,11 @@ SpringBoot 本身就是基于maven 的
 ```
 Idea 需要特殊配置
 
-![](img\19.png)
+![](./img/19.png)
 
 然后 Shift+Ctrl+Alt+/，选择Registry
 
-![](img\20.png)
+![](./img./20.png)
 
 
 
