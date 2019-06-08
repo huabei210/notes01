@@ -119,7 +119,15 @@ public class Cart implements Serializable{
 视频名称: 06.cookie购物车-后端代码-服务端-1
 视频时长: 13:52
 ```
-**小节内容**
+```
+//1.根据skuID查询商品明细SKU的对象
+//2.根据SKU对象得到商家ID
+//3.根据商家ID在购物车列表中查询购物车对象
+//4.如果购物车列表中不存在该商家的购物车
+//5.如果购物车列表中存在该商家的购物车
+```
+
+
 
 ![](./img/day16_00002.png)
 
@@ -264,6 +272,7 @@ access="IS_AUTHENTICATED_ANONYMOUSLY" 用于设置资源可以在不登陆时可
 视频时长: 03:57
 ```
 **小节内容**
+
 ```
 1)如果没有登陆则,直接从cookie中获取即可,无需操作redis
 2)如果登陆了则读取需要从
@@ -296,9 +305,7 @@ access="IS_AUTHENTICATED_ANONYMOUSLY" 用于设置资源可以在不登陆时可
 ```
 <script type="text/javascript">
 		location.href="cart.html";
-	</script>
-
-  
+</script>
 ```
 **补充**跳板页逻辑
 
