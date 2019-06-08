@@ -40,7 +40,10 @@ redies
 **小节内容**
 
 ```
-1) 当没有登陆时,购物车中的数据存储的cookie 中
+1)相同商家的商品应该存储在一起
+2)相同的商品数据应该累加
+
+3) 当没有登陆时,购物车中的数据存储的cookie 中
 2) 当用户登陆后，采用redis存储,并且要将cookie中的购物车合并到redis中，cookie 中的购物车清空
 
 
@@ -166,6 +169,8 @@ BigDecimal 是 java 提供的处理大数字的工具类
         System.out.println(a.subtract(b));// -
         System.out.println(a.multiply(b));// *
         System.out.println(a.divide(b));// /
+ /////
+ https://www.cnblogs.com/LeoBoy/p/6056394.html
 ```
 ### 1.3.9 .cookie购物车-后端代码-控制层
 **视频信息**
