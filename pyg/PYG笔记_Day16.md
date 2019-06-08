@@ -184,7 +184,8 @@ BigDecimal 是 java 提供的处理大数字的工具类
 ```
 **补充**
 ```
-
+springmvc允许在controller类中通过@Autowired配置request、response以及requestcontext等实例对象。这种配置方法是否线程安全？答案是——这种配置方法是线程安全的
+底层使用了ThreadLoal 来控制线程安全问题
 ```
 ### 1.3.10 .cookie购物车-后端代码-测试
 **视频信息**
