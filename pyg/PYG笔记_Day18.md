@@ -329,7 +329,7 @@ String result = client.getContent(); //获取结果
 此时解决方案如下:
 	1) 修改tomcat 的连接的超时时间
 ```
-**补充**
+![1560151458186](assets/1560151458186.png)
 
 
 
@@ -437,7 +437,7 @@ setInterval(mytime,1000); //mytime是方法，1000表示每1秒执行一次
 掌握:
 	技术上: 1)微信支付文档的查看
     业务:  2)超时如何处理,异常关闭如何处理
-    业务:  3)订单orderid和支付交易码(out_trade_no如何关联 
+    业务:  3)订单orderid和支付交易码(out_trade_no如何关联)
 ```
 **补充**
 
