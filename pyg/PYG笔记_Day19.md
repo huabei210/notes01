@@ -187,7 +187,17 @@ $scope.second = 10;
 ```
 **补充**
 ```
-
+<script>
+//获取时间
+function mytime(){
+	console.log(new Date())
+	//if(i==0){
+	// clearInterval(intver);
+	// }
+	
+}
+var intver=setInterval(mytime,3000); //mytime是方法，1000表示每1秒执行一次
+</script>
 ```
 ### 1.3.11 .秒杀商品详细页-倒计时读秒
 **视频信息**
@@ -253,6 +263,8 @@ $scope.findOne=function(){
 
 ```
 https://www.jianshu.com/p/e72baf5e5617
+原理
+	http://redisdoc.com/string/psetex.html
 ```
 
 ```java
