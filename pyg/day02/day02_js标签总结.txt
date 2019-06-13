@@ -29,6 +29,7 @@ http://www.runoob.com/angularjs/angularjs-tutorial.html
 	$controller
 	$scope.$watch
 	$location
+	$interval 定时触发某个函数
 	
 内置API----
 $event  : 源  //.target.checked
