@@ -6,7 +6,9 @@ Spring Security
 ```
 ## 1.2 今日目标
 ```
-
+1) 为什么 Spring Security?
+2) Spring Security 认证流程?
+3) 看懂代码
 ```
 ## 1.3课程内容
 ### 1.3.1 .今日目标
@@ -37,7 +39,12 @@ Spring Security
 ```
 **补充**
 ```
-
+1) 资源拦截
+2) 登陆功能
+3) 用户权限角色
+4) 黑客攻击
+.....
+5) 集成其他技术
 ```
 ### 1.3.3 .入门小demo-最简单案例
 **视频信息**
@@ -59,7 +66,7 @@ Spring Security
 use-expressions="false" 是否启用SPEL 表达式
 pattern="/**" : 
 	/* 表示拦截跟目录
-	/** 连接根目录及其子目录
+	/** 拦截根目录及其子目录
 	
 ```
 
@@ -76,7 +83,7 @@ pattern="/**" :
 
 ![](img/Snipaste_2019-01-19_21-43-35.png)
 
-![1558407362005](assets/1558407362005.png)
+
 
 注意: 此处的action要和配置文件中的一致
 
@@ -137,6 +144,25 @@ pattern="/**" :
 		loginform.submit() : 这个是dom 源声的东西 格式"form表单Id.方法名" 可以直接调用
 ```
 
+```xml
+<!DOCTYPE html>
+<html>
+<head>
+	<script >
+		alert(fm.myid.value);
+	</script>
+</head>
+<form id="fm">
+  <input  name="myid" value="2">
+<form>
+	<script >
+		alert(fm.myid.value);
+	</script>
+<body>
+```
+
+
+
 frameset 标签学习网址:
 
 <http://www.w3school.com.cn/tags/tag_frameset.asp>
@@ -156,7 +182,7 @@ index.html
 
 ```
 
-
+![1561172850811](assets/1561172850811.png)
 
 
 
@@ -169,6 +195,8 @@ index.html
 Spring-security 登陆流程
 
 ![](assets/spring-security流程.png)
+
+
 
 ### 1.3.6 .运营商系统-显示登陆名
 

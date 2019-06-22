@@ -4,23 +4,14 @@
  <script src="angular.min.js"></script> 
  <script> 
   var app=angular.module('myApp',[]); //定义了一个叫 myApp 的模块 
+  
   //定义控制器 
   app.controller('myController',function($scope){ 
 	   $scope.add=function(){ 
 		return parseInt($scope.x)+parseInt($scope.y); 
 	   } 
   }); 
-  // $scope 定义了一个public 的全局变量
-  /*
-  $scope={
-	x: 5
-    y: 4 
-	add: 
-		function(){ 
-		return parseInt($scope.x)+parseInt($scope.y); 
-	   } 
-  }
-  */
+ 
  </script> 
 </head> 
 <body ng-app="myApp" ng-controller="myController"> 
@@ -28,4 +19,5 @@ x:<input ng-model="x" >
 y:<input ng-model="y" > 
 运算结果：{{add()}} 
 </body> 
+
 </html> 

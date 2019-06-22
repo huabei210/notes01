@@ -18,22 +18,23 @@ http://www.runoob.com/angularjs/angularjs-tutorial.html
 	 ng-controller : 指定控制器// app.controller('brandController',function($scope,$http){
 	 ng-click: 单击事件
 	 ng-repeat: 循环  entity in list
-	 ng-if  : 是否显示包含的标签内容
 	 
+	 ng-if  : 是否显示包含的标签内容
 	 ng-options
 	 ng-true-value/ng-false-value=
 	 ng-checked=
 内置服务
 	$scope
 	$http
+	
 	$controller
 	$scope.$watch
 	$location
 	$interval 定时触发某个函数
 	
 内置API----
-$event  : 源  //.target.checked
+$event  : 源  //$event.target.checked
 $index
 =========
-任何对象在使用前保证"点"之前对象被初始化过
+任何对象在使用前保证最后一个"点"之前对象被初始化过
 	 
