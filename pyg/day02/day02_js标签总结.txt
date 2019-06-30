@@ -20,7 +20,7 @@ http://www.runoob.com/angularjs/angularjs-tutorial.html
 	 ng-repeat: 循环  entity in list
 	 
 	 ng-if  : 是否显示包含的标签内容
-	 ng-options
+	 ng-options: 下拉
 	 ng-true-value/ng-false-value=
 	 ng-checked=
 内置服务
