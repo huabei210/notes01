@@ -6,9 +6,8 @@ typora-root-url: img
 # 第1节课
 ## 1.1 今日知识点
 ```
-1)下拉框三级联动
-2)变量监控
-3)JS对象深克隆
+1)下拉框三级联动/变量监控
+2)JS对象深克隆
 ```
 ## 1.2 今日目标
 ```
@@ -133,7 +132,7 @@ $scope.$watch('entity.goods.category1Id', function(newValue, oldValue) {
 ```
 
 ```json
-##  返回值 是一个数据
+##  返回值 是一个二维数组
 [
 	{
 		"options":[{"id":98,"optionName":"移动3G","orders":1,"specId":27}],
@@ -219,7 +218,11 @@ User user = new User();
 
 ```
 
+对象的克隆-地址引用
+
 ![1558688652114](/../assets/1558688652114.png)
+
+
 
 
 
@@ -262,9 +265,9 @@ User user = new User();
 		return newList;
 	}
 ```
-![](img/1545660607182.png)
+![](./img/1545660607182.png)
 
-![Snipaste_2019-01-23_15-45-57](img/Snipaste_2019-01-23_15-45-57.png)
+![Snipaste_2019-01-23_15-45-57](/img/Snipaste_2019-01-23_15-45-57.png)
 
 ### 1.3.14 .SKU列表-表格绑定
 

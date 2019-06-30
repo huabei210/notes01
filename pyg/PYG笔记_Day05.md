@@ -249,6 +249,15 @@ tb_item(tb_goods_item): SKU 表 //
 视频时长: 10:44
 ```
 **小节内容**
+
+```
+FastDFS
+	海量数据
+	数据备份
+```
+
+
+
 ```
 FastDFS 是用 c 语言编写的一款开源的分布式文件系统
 	Tracker server :管理服务
@@ -267,7 +276,7 @@ Storage：实际保存文件
 
 ![1558508940040](assets/1558508940040.png)
 
-
+/fastdfs/storageData/fdfs_storage/data
 
 ### 1.3.14 .文件上传及下载的流程
 **视频信息**

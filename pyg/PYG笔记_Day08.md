@@ -2,6 +2,7 @@
 # 第1节课
 ## 1.1 今日知识点
 ```
+Redis
 springDataRedis
 ```
 ## 1.2 今日目标
@@ -160,6 +161,20 @@ http://doc.redisfans.com/
 
 ```
 
+Why redis?
+
+```
+性能极高 – Redis能读的速度是110000次/s,写的速度是81000次/s 。
+丰富的数据类型 – Redis支持二进制案例的 Strings, Lists, Hashes, Sets 及 Ordered Sets 数据类型操作。
+原子 – Redis的所有操作都是原子性的，意思就是要么成功执行要么失败完全不执行。单个操作是原子性的。多个操作也支持事务，即原子性，通过MULTI和EXEC指令包起来。
+```
+
+
+
+
+
+
+
 ##### Redis 数据类型5 种
 
 ```
@@ -175,7 +190,6 @@ ZSet: 有序集合
 ```
 flushdb
 	清空当前库所有key
-
 SET key value  
 	设置值
 DEL key
