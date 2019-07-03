@@ -58,6 +58,10 @@ HighlightOptions highlightOptions=new HighlightOptions().addField("item_title");
 ```
 **小节内容**
 
+
+
+![1561948422766](assets/1561948422766.png)
+
 ```
 思考>:前端为何不显示样式?
 	angular js 安全机制自动拦截了
@@ -67,6 +71,17 @@ https://www.cnblogs.com/lyy-2016/p/7928728.html
 	
 ```
 ![](img/day10_0001.png)
+
+```html
+ 不使用过滤器的另一种写法
+ //信任
+    $scope.trust=function(html){
+        return $sce.trustAsHtml(html);
+    }
+     
+<div class="attr" ng-bind-html="trust(item.title)">
+
+```
 
 ### 1.3.4 .业务规则-需求分析
 
@@ -152,9 +167,11 @@ https://www.cnblogs.com/lyy-2016/p/7928728.html
 视频时长: 08:45
 ```
 **小节内容**
-```
 
-```
+Redis 缓存中的内容
+
+![1561972180995](assets/1561972180995.png)
+
 **补充**
 ```
 
@@ -351,7 +368,5 @@ delete 移除js 中的对象
 
 
 
-```
-
-```
+![1561946531891](assets/1561946531891.png)
 

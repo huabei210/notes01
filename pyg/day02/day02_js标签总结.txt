@@ -17,7 +17,7 @@ http://www.runoob.com/angularjs/angularjs-tutorial.html
 	 ng-init="add()" 初始化执行
 	 ng-controller : 指定控制器// app.controller('brandController',function($scope,$http){
 	 ng-click: 单击事件
-	 ng-repeat: 循环  entity in list
+	 ng-repeat: 循环  entity in list   //  ng-repeat="(key,value) in searchMap.spec"
 	 
 	 ng-if  : 是否显示包含的标签内容
 	 ng-options: 下拉
