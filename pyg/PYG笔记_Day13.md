@@ -383,8 +383,8 @@ spring 头报错 使用如下头
 		<property name="connectionFactory" ref="connectionFactory" />
 		<property name="destination" ref="topicTextDestination" />
 		<property name="messageListener" ref="myMessageListener" />
-		<!-- 持久化阅模式 -->
-		<!-- 发布订阅模式 -->
+		<!--发布订阅模式, 持久化阅模式 -->
+
 		<property name="pubSubDomain" value="true" />
 		<!-- 消息持久化值设置为true -->
 		<property name="subscriptionDurable" value="true" />
