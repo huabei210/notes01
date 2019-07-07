@@ -53,8 +53,7 @@ MQ的使用场景
     2) 提升效率
 什么样的场景适合消息中间件
 	1) 不需要返回结果
-	2) 调用时间相对较长
-
+	2) 调用时间相对较长或者性能要求高的
 ```
 
 ### 1.3.4 .JMS介绍(理解)
@@ -74,7 +73,7 @@ JMS本身只定义了一系列的<font color='#FF4500'>**接口规范**</font>�
 ```
 · TextMessage--一个字符串对象
 · MapMessage--一套名称-值对
-· ObjectMessage--一个序列化的 Java 对象
+· ObjectMessage--一个序列化的 Java 对象 
 · BytesMessage--一个字节的数据流
 · StreamMessage -- Java 原始值的数据流
 
@@ -461,9 +460,9 @@ spring 头报错 使用如下头
 视频时长: 08:47
 ```
 **小节内容**
-```
 
-```
+
+
 **补充**
 ```
 
@@ -536,5 +535,16 @@ spring 头报错 使用如下头
 ```
 **补充**
 ```
+ boolean b= false;
+ if(b=true){// 先赋值后判断
+ System.out.println(123);
+ }else{
+ System.out.println(3453);s
+ }
+ System.out.println(b);
+ int i=10;
+ while (i-->0){// 先判断后 --;
+ System.out.println(i);
 
+}
 ```
