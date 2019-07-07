@@ -30,6 +30,7 @@ FreeMaker 网页静态化
 网页静态化技术和缓存技术的共同点都是为了减轻数据库的访问压力，但是具体的应用场景不同，缓存比较适合小规模的数据，而网页静态化比较适合大规模且相对变化不太频繁的数据。另外网页静态化还有利于SEO
 ```
 **补充**
+
 ```
 1) JSP 其实也是一种模板引擎
 2) FreeMarker Template Language（FTL）
@@ -83,6 +84,7 @@ FreeMaker 网页静态化
 		map.put("message", "欢迎来到神奇的品优购世界！");
 		//6.创建Writer对象
 		Writer out =new FileWriter(new File("d:\\test.html"));
+ 		// Writer out =new OutputStreamWriter(new FileOutputStream(new File("D:\\test.html")),"utf-8");
 		//7.输出
 		template.process(map, out);
 		//8.关闭Writer对象
@@ -103,9 +105,9 @@ assign指令
 联系人：${linkman}
 
  include指令
- 	<#include "head.ftl">
+<#include "head.ftl">
 if
-        <#if success=true>
+ <#if success=true>
   你已通过实名认证
 <#else>  
   你未通过实名认证
@@ -140,6 +142,8 @@ http://freemarker.foofun.cn/
 当前时间：${today?time} <br>   
 当前日期+时间：${today?datetime} <br>        
 日期格式化：  ${today?string("yyyy年MM月")}  // 参考java 字符串格式转换语法
+
+price?c
 ```
 **补充**
 ```
