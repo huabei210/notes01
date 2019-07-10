@@ -105,7 +105,7 @@ spring 两大特征
 </resource>
 这个配置就规定了 
 	1) 配置文件的目录必须放在 src/main/resources
-    2) 配置文件必须以 application 开头 
+    2) 配置文件必须以 application 开头 (默认必须application)
     3) 配置文件必须是yml 格式或者是properties 格式
 备注
   yml (yaml)是另外一种常用的文件格式,和我们xml,json或者是properties 一样,有指定的格式,其实就是一种普通的文本文件格式,常用于linux 环境的配置文件中
@@ -166,7 +166,7 @@ src/main/resource
 
 ![](img/Snipaste_2019-02-18_11-01-23.png)
 
-1) ctrl_shift+A
+1) Shift+Ctrl+Alt+/
 
  输入 Registry
 
@@ -273,7 +273,7 @@ https://netease.im/sms
 
 ```
 static final String accessKeyId = "LTAI4c2iz2BtplTn";
-    static final String accessKeySecret = "6POPVgnmoGU8GqwdfcT1AzmV2JO88c";
+static final String accessKeySecret = "6POPVgnmoGU8GqwdfcT1AzmV2JO88c";
 ```
 
 

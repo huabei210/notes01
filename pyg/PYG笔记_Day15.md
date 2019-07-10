@@ -52,7 +52,7 @@
 	2) 登陆代码有多分,开发重复,维护麻烦既有可能导致登陆界面长期维护后不一致
 ```
 
-
+![1562750125041](assets/1562750125041.png)
 
 
 
@@ -73,7 +73,7 @@ CAS 是 Yale 大学发起的一个开源项目，旨在为 Web 应用系统提�
 ```
 ![](./img/day15_0001.png)
 
-![](./img/day15_00002.png)
+
 
 ### 1.3.5 .CAS服务端部署
 
@@ -231,14 +231,15 @@ casProcessingFilterEntryPoint:
 CAS_FILTER,LOGOUT_FILTER 是内置好的一些过滤器
 ```
 ### 1.3.15 .springSecurity与cas集成-3
-**视频信息**
-```
-视频名称: 15.springSecurity与cas集成-3
-视频时长: 06:35
-```
 ### 1.3.16 .springSecurity与cas集成-4
 ### 1.3.17 .springSecurity与cas集成-5
+
+角色
+
 ### 1.3.18 .springSecurity与cas集成-6
+
+测试
+
 ### 1.3.19 .获取当前登录名
 **视频信息**
 ```
