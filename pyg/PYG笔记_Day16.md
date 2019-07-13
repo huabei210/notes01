@@ -163,8 +163,8 @@ public class Cart implements Serializable{
 **补充**
 ```
 BigDecimal 是 java 提供的处理大数字的工具类
-	BigDecimal a= new BigDecimal(100);
-        BigDecimal b= new BigDecimal(100);
+	BigDecimal a= new BigDecimal("100");
+        BigDecimal b= new BigDecimal("100");
         System.out.println(a.add(b));// +
         System.out.println(a.subtract(b));// -
         System.out.println(a.multiply(b));// *
@@ -242,7 +242,7 @@ springmvc允许在controller类中通过@Autowired配置request、response以及
 **补充**
 ```
 toFixed(2):
-   4舍6入 5取偶
+   4舍6入  5 不确定
    保留小数点后两位
    0.025  -->0.03
    0.015  -->0.01

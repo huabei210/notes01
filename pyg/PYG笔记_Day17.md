@@ -22,20 +22,6 @@
 目标4：完成结算页商品清单功能
 目标5：完成保存订单功能
 ```
-**补充**
-```js
-toFixed(2):
-   4舍6入 5取偶
-   保留小数点后两位
-   0.025  -->0.03
-   0.015  -->0.01
-   
-<script type="text/javascript">
-	var num = new Number(13.37);
-	document.write (num.toFixed(1))
-</script>
-   
-```
 ### 1.3.2 .JS跨域
 **视频信息**
 ```
@@ -45,9 +31,13 @@ toFixed(2):
 **小节内容**
 ```
 什么是不同的域
-	只要协议、域名、端口有任何一个不同，都被当作是不同的域
-跨域请求指的是js 请求, 
-<a href="www.baidu.com"> 和<img src> 允许跨域 
+	只要协议、域名、端口有任何一个不同，都被当作是不同的域	
+	
+什么是跨域
+	通俗的讲,a 网站请求b 网站的资源叫做跨域
+浏览器默认js是不允许跨域(Ajax)
+	注意是在js 中不允许跨域,
+但是可以在<img src="www.jd.com/sss.jpg"> 或者<a href="www.baidu.com">
 ```
 **补充**
 
@@ -60,8 +50,8 @@ toFixed(2):
 视频时长: 13:46
 ```
 **小节内容**
+
 ```
-默认js是不允许跨域
 跨域会有什么问题
 案例
 	1)用户A访问www.aaa.com 进行登陆(开启了7天免密登陆,其实就是存储了一个cookies)然后支付,(开通了免密支付),
@@ -87,9 +77,18 @@ CORS是一个W3C标准，全称是"跨域资源共享"（Cross-origin resource s
 2) 浏览器端需要编码
 3) 服务器端需要编码
 ```
+复杂请求流程(post发送的是json 或者上传附件)
+
 ![](./img/day17_00001.png)
 
+注意:
+
+​	简单请求 只发起一次请求  (get/ post (提交的是普通表单数据))
+
+(![1562985564666](assets/1562985564666.png))
+
 ```java
+
 response.setHeader("Access-Control-Allow-Origin", "http://localhost:9105");//可以访问的域(当此方法不需要操作cookie)
 	response.setHeader("Access-Control-Allow-Credentials", "true");//如果操作cookie，必须加上这句话
 
