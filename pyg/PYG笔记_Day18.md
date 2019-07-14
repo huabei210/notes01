@@ -17,6 +17,7 @@
 视频时长: 02:56
 ```
 **小节内容**
+
 ```
 目标1：掌握二维码生成插件qrious的使用
 目标2：能够说出微信支付开发的整体思路
@@ -95,6 +96,7 @@ weixin://wxpay/bizpayurl?pr=rr7ORTI
 ### 1.3.4 .微信支付申请流程
 
 **视频信息**
+
 ```
 视频名称: 04.微信支付申请流程
 视频时长: 05:22
@@ -348,10 +350,20 @@ String result = client.getContent(); //获取结果
 js 也可以发送定时任务
 <script>
 //获取时间
+var i=0;
 function mytime(){
 	console.log(new Date())
+	i++;
+	if(i>=10){// 十秒钟之后停止任务
+	 stop();
+	 console.log("任务结束")
+	}
 }
-setInterval(mytime,1000); //mytime是方法，1000表示每1秒执行一次
+var myVar=setInterval(mytime,1000); //mytime是方法，1000表示每1秒执行一次
+// 停止定时任务
+function stop() {
+    clearInterval(myVar);
+}
 </script>
 <body>
 </body>
