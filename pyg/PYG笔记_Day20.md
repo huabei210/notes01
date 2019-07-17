@@ -107,7 +107,19 @@ Year:可出现", - * /"四个字符，有效范围为1970-2099年
 视频名称: 05.Cron表达式测试
 视频时长: 11:07
 ```
-**补充**
+```java
+		Timer timer = new Timer();
+		timer.schedule(new TimerTask() {
+			@Override
+			public void run() {
+				System.out.println(new Date());
+			}
+		},1000,1000);
+```
+
+
+
+补充**
 
 1) spring- task 同一个任务 下的任务 式执行完一次之后,在执行下一次,不会并行
 
@@ -117,7 +129,40 @@ Year:可出现", - * /"四个字符，有效范围为1970-2099年
 
 ​	并给方法添加注解@Async。增加了 @Async 的方法会单独开一个线程
 
-​	没有增加 @Async 的会公用一个线程
+​	没有增加 @Async 的会共用一个线程
+
+```java
+@Scheduled(cron="* * * * * ?")
+	@Async
+	public void taskTest() throws InterruptedException {
+
+		System.out.println("11111====start=======任务执行了1"+new Date());
+		Thread.sleep(3000);
+		System.out.println("11111====end=======任务执行结束1"+Thread.currentThread().getName() +new Date());
+
+	}
+    //
+	@Scheduled(cron="* * * * * ?")
+	@Async
+	public void taskTest1() throws InterruptedException {
+		System.out.println("========任务执行了2"+new Date());
+		Thread.sleep(3000);
+		System.out.println("========任务执行结束2"+Thread.currentThread().getName() +new Date());
+
+	}
+```
+
+
+
+--------------------------------
+
+另外一种定时任务:
+
+​	补:Quartz入门
+
+```
+https://blog.csdn.net/noaman_wgs/article/details/80984873
+```
 
 ### 1.3.6 .秒杀商品列表增量更新
 
@@ -130,7 +175,6 @@ Year:可出现", - * /"四个字符，有效范围为1970-2099年
 **小节内容**
 ```
 1) 缓存不能一性清空后,在更新
-2) 
 ```
 **补充**
 ```
@@ -138,7 +182,7 @@ Year:可出现", - * /"四个字符，有效范围为1970-2099年
 mybatis当集合为空或者长度为0 的的时候 需要判断,否则  查询到数据 
 if(goodsIdList.size()>0){
 			criteria.andIdNotIn(goodsIdList);//排除缓存中已经存在的商品ID集合
-		}
+}
 ```
 ### 1.3.7 .过期秒杀商品的移除
 **视频信息**
@@ -283,7 +327,7 @@ ORM:
 
 ​	  不太重要但是数据量很大的业务 (收藏,评价,客户足迹)
 
-
+![1563350412415](assets/1563350412415.png)
 
 ### 1.3.15 .其它业务功能分析-用户中心
 
